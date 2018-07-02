@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>login</title>
+  <meta name="description" content="">
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="login">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+
+<div class="container">
+  <div ng-view=""></div>
+  <form name="loginForm" ng-controller="LoginCtrl"
+        ng-submit="login(credentials)" novalidate>
+    <label for="username">Username:</label>
+    <input type="text" id="username"
+           ng-model="credentials.uname">
+    <label for="password">Password:</label>
+    <input type="password" id="password"
+           ng-model="credentials.pword">
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<!-- endbuild -->
+</body>
+</html>
